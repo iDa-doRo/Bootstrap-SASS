@@ -1,0 +1,84 @@
+// custom colors
+$primary: #5265E1;
+$secondary: #FA5959; 
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+);
+
+// custom button
+$btn-custom-bg: #f7f7f7e4; 
+$btn-box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+.btn-custom {
+    @extend .btn;  // Extend Bootstrap's .btn class
+    background-color: $btn-custom-bg;
+    box-shadow: $btn-box-shadow;
+}
+
+
+// blue background element
+$my-element: (
+  default: ( // base styles
+  z-index: -1,
+    position: relative,
+    background-color: $primary // Division fill
+  ),
+  xs: ( // Extra-small screens (<576px)
+    height: 33vh,
+    margin-top: -33vh,
+    margin-left: 25vw,
+  ),
+  sm: ( // Small devices (≥576px)
+    height: 39vh,
+    margin-top: -37vh,
+    margin-left: 20vw,
+  ),
+  md: ( // Medium devices (≥768px)
+    height: 53vh,
+    margin-top: -53vh,
+    margin-left: 22vw,
+  ),
+  lg: ( // Large devices (≥992px)   
+  height: 35vh,
+  margin-top: -35vh,
+  margin-left: 11vw
+  ),
+  xl: ( // Extra-large devices (≥1200px)
+    height:42vh,
+    margin-top: -42vh,
+    margin-left: 11vw,
+  )
+);
+
+// Apply the responsive styles
+.my-element {
+  // Base styles for laptops
+  @each $property, $value in map-get($my-element, default) {
+    #{$property}: #{$value};
+  }
+
+  // Adjust for smaller and larger screens
+  @each $breakpoint, $styles in $my-element {
+    @if $breakpoint != default {
+      @if $breakpoint == xs {
+        @media (max-width: 575.98px) { // Extra-small screens
+          @each $property, $value in $styles {
+            #{$property}: #{$value};
+          }
+        }
+      } @else {
+        @media (min-width: #{if($breakpoint == sm, "576px", if($breakpoint == md, "768px", if($breakpoint == lg, "992px", if($breakpoint == xl, "1200px", "1400px"))))}) {
+          @each $property, $value in $styles {
+            #{$property}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";

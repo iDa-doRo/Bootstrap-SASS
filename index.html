@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>S1.2 Bootstrap Task</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="row d-flex navbar sticky-top mt-4 ms-3 ms-lg-5 navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="col-6 navbar-brand" href="#">
+                        <img src="img/imagenes/logo-bookmark.svg" alt="" width="200" height="36">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="col">
+                            <ul class="navbar-nav justify-content-evenly">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FEATURES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">PRICING</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="btn btn-secondary text-white px-3" type="button">LOGIN</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container mt-5">
+            <main class="row ms-2 ms-lg-5">
+                <div class="col-12 col-lg order-2 align-self-center text-center text-lg-start">
+                    <h1 class="text-wrap pe-4 my-4 my-lg-2">
+                        A Simple Bookmark Manager
+                    </h1>
+                    <p class="lh-lg text-wrap pe-4 mb-4 mb-lg-2 mx-4 mx-lg-0">
+                        A clean and simple interface to organize your favourite websites. Open a new browser tab and
+                        see your sites load
+                        instantly. Try it for free.
+                    </p>
+                    <button type="button" class="btn btn-primary px-3">Get it on Chrome</button>
+                    <button type="button" class="btn btn-custom px-3">Get it on Firefox</button>
+                </div>
+                <div class="col-12 col-lg position-relative order-1 order-lg-2 p-0 mx-4 mx-lg-0">
+                    <img src="img/imagenes/illustration-hero.svg" class="img-fluid" style="z-index: 0;"
+                        alt="hero picture">
+                    <div class="bg-primary rounded-end rounded-pill my-element"></div>
+                </div>
+            </main>
+        </div>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
+
+</html>
