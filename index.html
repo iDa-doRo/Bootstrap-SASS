@@ -9,8 +9,9 @@
     </head>
 
     <body>
+        <!--navigation bar-->
         <div class="container">
-            <nav class="row d-flex navbar sticky-top mt-4 ms-3 ms-lg-5 navbar-expand-lg navbar-light bg-light">
+            <nav class="row d-flex navbar sticky-top mt-4 ms-4 navbar-expand-lg navbar-light bg-light">
                 <div class="container">
                     <a class="col-6 navbar-brand" href="#">
                         <img src="img/imagenes/logo-bookmark.svg" alt="" width="200" height="36">
@@ -40,13 +41,14 @@
                 </div>
             </nav>
         </div>
-        <div class="container mt-5">
+        <!--main content-->
+        <div class="container mt-5 px-0">
             <main class="row ms-2 ms-lg-5">
-                <div class="col-12 col-lg order-2 align-self-center text-center text-lg-start">
+                <div class="col-12 col-lg order-2 align-self-center text-center text-lg-start ms-5">
                     <h1 class="text-wrap pe-4 my-4 my-lg-2">
                         A Simple Bookmark Manager
                     </h1>
-                    <p class="lh-lg text-wrap pe-4 mb-4 mb-lg-2 mx-4 mx-lg-0">
+                    <p class="lh-lg text-wrap pe-4 py-3 mb-lg-2 mx-4 mx-lg-0">
                         A clean and simple interface to organize your favourite websites. Open a new browser tab and
                         see your sites load
                         instantly. Try it for free.
@@ -61,6 +63,99 @@
                 </div>
             </main>
         </div>
+        <!--features-->
+        <div class="container">
+            <section class="row text-center ms-5 ps-4">
+                <div class="col-12 col-lg-3 d-none d-lg-block"></div>
+                <div class="col-12 col-lg-6">
+                    <h2 class="text-wrap pe-4 mt-5">Features</h2>
+                    <p class="lh-lg text-wrap py-3 mb-lg-2">Our aim is to make it culck and easy tor you
+                        to access your favourite websites. Your bookmarks sync
+                        between your devices so you can access them on the go.</p>
+                </div>
+                <div class="col-12 col-lg-3 d-none d-lg-block"></div>
+            </section>
+        </div>
+        <!--tab bar-->
+        <div class="container">
+            <ul class="nav nav-tabs justify-content-center align-items-center ms-5 text-center d-flex flex-column flex-lg-row"
+                id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active text-black p-4 border-0" id="home-tab" data-bs-toggle="tab"
+                        data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Simple
+                        Bookmarking</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-black p-4 border-0" id="profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                        aria-selected="false">Speedy
+                        Searching</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-black p-4 border-0" id="contact-tab" data-bs-toggle="tab"
+                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                        aria-selected="false">Easy Sharing</button>
+                </li>
+            </ul>
+            <!-- start tab contet-->
+            <div class="tab-content pt-5" id="myTabContent">
+                <!--first tab-->
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row d-flex flex-wrap flex-md-nowrap">
+                        <div class="col-12 col-md-6">
+                            <img src="img/imagenes/illustration-features-tab-1.svg" class="img-fluid m-5 mt-2"
+                                style="z-index: 0;" alt="hero picture">
+                            <div class="bg-primary rounded-end rounded-pill my-element ms-0" style="scale: -1 1;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 px-5 m-5 text-center text-md-start">
+                            <h3 class="mx-4">Bookmark in one click</h3>
+                            <p class="mx-4 py-2">Organize your bookmarks however you like. Our simple drag-and-drop
+                                interface gives you complete control over how you manage your favourite sites.</p>
+                            <button type="button" class="btn btn-primary px-3 mx-4">More Info</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--second tab-->
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="row d-flex flex-wrap flex-md-nowrap">
+                        <div class="col-12 col-md-6">
+                            <img src="img/imagenes/illustration-features-tab-2.svg" class="img-fluid m-5 mt-2"
+                                style="z-index: 0;" alt="hero picture">
+                            <div class="bg-primary rounded-end rounded-pill my-element ms-0" style="scale: -1 1;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 p-5 m-5 text-center text-md-start">
+                            <h3 class="mx-3">Intelligent search</h3>
+                            <p class="mx-3 py-2">Our powerful search feature will help you find saved sites in no
+                                time at all. No need to trawl through all of your bookmarks.</p>
+                            <button type="button" class="btn btn-primary px-3 mx-3">More Info</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--third tab-->
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="row d-flex flex-wrap flex-md-nowrap">
+                        <div class="col-12 col-md-6">
+                            <img src="img/imagenes/illustration-features-tab-3.svg" class="img-fluid m-5 mt-2"
+                                style="z-index: 0;" alt="hero picture">
+                            <div class="bg-primary rounded-end rounded-pill my-element ms-0" style="scale: -1 1;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 p-5 m-5 text-center text-md-start">
+                            <h3 class="mx-3">Share your bookmarks</h3>
+                            <p class="mx-3 py-2">Easily share your bookmarks and collections with others. Create a
+                                shareable link that you can send at the click of a button.</p>
+                            <button type="button" class="btn btn-primary px-3 mx-3">More Info</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 

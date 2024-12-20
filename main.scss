@@ -17,6 +17,20 @@ $btn-box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     box-shadow: $btn-box-shadow;
 }
 
+/* custom active tabs */
+.nav-tabs {
+  width: 100%;
+  .nav-item{
+    border-bottom: 3px solid transparent;
+    &:hover {
+      border-bottom: 3px solid $secondary;
+    }
+    &:active {
+      border-bottom: 3px solid $secondary;
+    }
+  }
+}
+
 
 // blue background element
 $my-element: (
