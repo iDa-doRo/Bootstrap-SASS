@@ -1,4 +1,4 @@
-// custom colors
+/* custom colors */
 $primary: #5265E1;
 $secondary: #FA5959; 
 
@@ -7,12 +7,12 @@ $theme-colors: (
   "secondary": $secondary,
 );
 
-// custom button
+/* custom button */
 $btn-custom-bg: #f7f7f7e4; 
 $btn-box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 
 .btn-custom {
-    @extend .btn;  // Extend Bootstrap's .btn class
+    @extend .btn; 
     background-color: $btn-custom-bg;
     box-shadow: $btn-box-shadow;
 }
@@ -31,35 +31,122 @@ $btn-box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
 }
 
+/* custom cards */
+$custom-card-border-radius: 0.5rem;
+$custom-card-bg: #fff;
+$custom-card-box-shadow: 5px 5px 3px 5px rgba(0, 0, 0, 0.1);
+$custom-card-width: 16rem;
+$custom-card-height: 18rem;
+$custom-card-bottom: 1.5rem;
+
+.custom-card {
+  width:$custom-card-width;
+  height: $custom-card-height;
+  border-radius: $custom-card-border-radius;
+  background-color: $custom-card-bg;
+  box-shadow: $custom-card-box-shadow;
+  text-align: center;
+  padding-bottom: $custom-card-bottom;
+  margin-bottom: 2rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+.custom-img {
+  width: 50%; 
+  height: auto; 
+  margin: 0 auto; 
+  padding: 1rem;
+  object-fit: contain;
+  border-top-left-radius: $custom-card-border-radius;
+  border-top-right-radius: $custom-card-border-radius;
+}
+
+h5 {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0.3rem 0 1rem;
+  color: #6c757d;
+  font-size: 0.8rem;;
+}
+
+.dotted-line {
+  border-top: 3px dotted #6c757d;
+  width: 100%;
+  margin: 1rem 0;
+}
+.btn {
+  margin-top: auto; 
+  align-self: center;
+}
+
+/* media queries to control stairs effect */
+@media (min-width: 992px) {
+  .stair-cards .col-lg-4:nth-child(2) .custom-card {
+    top: 2rem;
+  }
+
+  .stair-cards .col-lg-4:nth-child(3) .custom-card {
+    top: 4rem;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .custom-card {
+    top: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .stair-cards .col-sm-10 {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+
+  .custom-card {
+    height: auto; 
+    margin: 0; 
+  }
+}
+
+
+
 
 // blue background element
 $my-element: (
-  default: ( // base styles
+  default: ( // base style
   z-index: -1,
     position: relative,
-    background-color: $primary // Division fill
+    background-color: $primary 
   ),
-  xs: ( // Extra-small screens (<576px)
+  xs: ( 
     height: 33vh,
     margin-top: -33vh,
     margin-left: 25vw,
   ),
-  sm: ( // Small devices (≥576px)
+  sm: ( 
     height: 39vh,
     margin-top: -37vh,
     margin-left: 20vw,
   ),
-  md: ( // Medium devices (≥768px)
+  md: ( 
     height: 53vh,
     margin-top: -53vh,
     margin-left: 22vw,
   ),
-  lg: ( // Large devices (≥992px)   
+  lg: (    
   height: 35vh,
   margin-top: -35vh,
   margin-left: 11vw
   ),
-  xl: ( // Extra-large devices (≥1200px)
+  xl: ( 
     height:42vh,
     margin-top: -42vh,
     margin-left: 11vw,
@@ -73,11 +160,11 @@ $my-element: (
     #{$property}: #{$value};
   }
 
-  // Adjust for smaller and larger screens
+  // media queries for smaller and larger screens
   @each $breakpoint, $styles in $my-element {
     @if $breakpoint != default {
       @if $breakpoint == xs {
-        @media (max-width: 575.98px) { // Extra-small screens
+        @media (max-width: 575.98px) { 
           @each $property, $value in $styles {
             #{$property}: #{$value};
           }
