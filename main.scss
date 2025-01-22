@@ -1,16 +1,22 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* custom colors */
 $primary: #5265E1;
 $secondary: #FA5959; 
-
+$info: #242e6d;
+$custom-font: 0.7rem;
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
+  "info": $info
 );
 
 /* custom button */
 $btn-custom-bg: #f7f7f7e4; 
 $btn-box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-
 .btn-custom {
     @extend .btn; 
     background-color: $btn-custom-bg;
@@ -47,9 +53,8 @@ $custom-card-bottom: 1.5rem;
   box-shadow: $custom-card-box-shadow;
   text-align: center;
   padding-bottom: $custom-card-bottom;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-
 .card-body {
   padding: 1rem;
 }
@@ -62,18 +67,15 @@ $custom-card-bottom: 1.5rem;
   border-top-left-radius: $custom-card-border-radius;
   border-top-right-radius: $custom-card-border-radius;
 }
-
 h5 {
   margin-top: 1rem;
   font-weight: 600;
 }
-
 p {
   margin: 0.3rem 0 1rem;
   color: #6c757d;
   font-size: 0.8rem;;
 }
-
 .dotted-line {
   border-top: 3px dotted #6c757d;
   width: 100%;
@@ -84,102 +86,169 @@ p {
   align-self: center;
 }
 
+/* media queries cards sizes */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .custom-card {
+    height: 15rem; 
+    width:12rem; 
+  }
+}
+@media (max-width: 767.98px) {
+  .custom-card {
+    height: 15rem; 
+    width:12rem; 
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .custom-card {
+    height: auto; 
+    width:18rem; 
+  }
+}
+@media (max-width: 575.98px) {
+  .custom-card {
+    height: auto; 
+    width:18rem; 
+  }
+}
+
 /* media queries to control stairs effect */
 @media (min-width: 992px) {
   .stair-cards .col-lg-4:nth-child(2) .custom-card {
     top: 2rem;
   }
-
   .stair-cards .col-lg-4:nth-child(3) .custom-card {
     top: 4rem;
   }
 }
-
-
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .custom-card {
-    top: 0;
+  .stair-cards .col-md-4:nth-child(2) .custom-card {
+    top: 2rem;
+  }
+  .stair-cards .col-md-4:nth-child(3) .custom-card {
+    top: 4rem;
   }
 }
 
-@media (max-width: 767.98px) {
-
-  .stair-cards .col-sm-10 {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-  }
-
-  .custom-card {
-    height: auto; 
-    margin: 0; 
-  }
-}
-
-
-
-
-// blue background element
-$my-element: (
-  default: ( // base style
-  z-index: -1,
-    position: relative,
-    background-color: $primary 
-  ),
-  xs: ( 
-    height: 33vh,
-    margin-top: -33vh,
-    margin-left: 25vw,
-  ),
-  sm: ( 
-    height: 39vh,
-    margin-top: -37vh,
-    margin-left: 20vw,
-  ),
-  md: ( 
-    height: 53vh,
-    margin-top: -53vh,
-    margin-left: 22vw,
-  ),
-  lg: (    
-  height: 35vh,
-  margin-top: -35vh,
-  margin-left: 11vw
-  ),
-  xl: ( 
-    height:42vh,
-    margin-top: -42vh,
-    margin-left: 11vw,
-  )
-);
-
-// Apply the responsive styles
-.my-element {
-  // Base styles for laptops
-  @each $property, $value in map-get($my-element, default) {
-    #{$property}: #{$value};
-  }
-
-  // media queries for smaller and larger screens
-  @each $breakpoint, $styles in $my-element {
-    @if $breakpoint != default {
-      @if $breakpoint == xs {
-        @media (max-width: 575.98px) { 
-          @each $property, $value in $styles {
-            #{$property}: #{$value};
-          }
-        }
-      } @else {
-        @media (min-width: #{if($breakpoint == sm, "576px", if($breakpoint == md, "768px", if($breakpoint == lg, "992px", if($breakpoint == xl, "1200px", "1400px"))))}) {
-          @each $property, $value in $styles {
-            #{$property}: #{$value};
-          }
-        }
-      }
+// accordion color
+.custom-flush-accordion {
+  .accordion-button {
+    &::after {
+      color:$primary
+    }
+    &:not(.collapsed)::after {
+      color: orange;
     }
   }
 }
 
+/* Footer font-size control */
+.custom-footer-links .nav-link {
+  font-size: $custom-font; 
+}
+@media (max-width: 575.98px) {
+.custom-footer-links .nav-link{
+  font-size: 1rem;
+}
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .custom-footer-links .nav-link{
+    font-size: 1rem;
+  }
+}
 
+/* blue shape element*/
+.my-element {
+  /* Base styles*/
+  position: absolute; 
+  z-index: -1;           
+  background-color: $primary; 
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+/* Shape RIGHT margin */
+.my-element.align-right {
+  right: 0;         
+  left: auto;  
+  top: 6rem;                  
+  width: 20rem;            
+  height: 15rem;     
+}
+
+/* Shape LEFT margin */
+.my-element.align-left {
+  left: 0;         
+  right: auto; 
+  top: 12rem;                  
+  width: 29rem;           
+  height: 20rem;     
+}
+
+/* Media queries to control blue shape element */
+@media (max-width: 575.98px) {
+  .my-element.align-right {
+    top: 4rem;
+    width: 21rem;
+    height: 14rem;
+  }
+  .my-element.align-left {
+    top: 7rem;
+    width: 20rem;
+    height: 14rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .my-element.align-right {
+    top: 7rem;
+    width: 36rem;
+    height: 22rem;
+  }
+  .my-element.align-left {
+    top: 9rem;
+    width: 34rem;
+    height: 20rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .my-element.align-right {
+    top: 5.5rem;
+    width: 41rem;
+    height: 23rem;
+  }
+  .my-element.align-left {
+    top: 6rem;
+    width: 18rem;
+    height: 12rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .my-element.align-right {
+    top: 6rem;       
+    width: 20rem;     
+    height: 15rem;
+  }
+  .my-element.align-left {
+    top: 7rem;
+    width: 26rem;
+    height: 17rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .my-element.align-right {
+       top: 6rem;
+       width: 33rem;
+       height: 24rem;
+  }
+  .my-element.align-left {
+       top: 11rem;
+       width: 33rem;
+       height: 21rem;
+  }
+}
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
